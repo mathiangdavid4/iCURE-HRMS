@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - iCure Medical Centre HR System</title>
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a5276">
+    <meta name="description" content="iCure Medical Centre HR Management System">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-form">
+            <div class="logo-container">
+                <div class="logo">ICURE</div>
+                <div class="logo-subtitle">MEDICAL CENTRE</div>
+                <div class="logo-tagline">Restoring Health, Renewing Lives</div>
+            </div>
+            <h2>HR Management System</h2>
+            
+            <div class="tabs">
+                <div class="tab active" id="ownerTabBtn">Administrator</div>
+                <div class="tab" id="staffTabBtn">Staff Login</div>
+            </div>
+            
+            <div id="ownerTab" class="tab-content active">
+                <div class="form-group">
+                    <label for="ownerEmail">Email Address</label>
+                    <input type="email" id="ownerEmail" class="form-control" placeholder="Enter administrator email" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="ownerPassword">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="ownerPassword" class="form-control" placeholder="Enter administrator password" autocomplete="current-password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('ownerPassword')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="ownerLoginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Administrator Login
+                </button>
+                
+                <div class="demo-info" style="margin-top: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px; font-size: 0.8rem; color: #666;">
+                    <i class="fas fa-info-circle"></i> Contact system administrator for credentials
+                </div>
+            </div>
+            
+            <div id="staffTab" class="tab-content">
+                <div class="form-group">
+                    <label for="staffId">Staff ID</label>
+                    <input type="text" id="staffId" class="form-control" placeholder="Enter your staff ID" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="staffPassword">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="staffPassword" class="form-control" placeholder="Enter your password" autocomplete="current-password">
+                        <button type="button" class="password-toggle" onclick="togglePassword('staffPassword')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="staffLoginBtn">
+                    <i class="fas fa-sign-in-alt"></i> Staff Login
+                </button>
+            </div>
+            
+            <div class="login-footer">
+                <p style="text-align: center; color: #666; font-size: 0.8rem; margin-top: 20px;">
+                    <i class="fas fa-shield-alt"></i> Secure HR Management System
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+
+    <script src="js/database.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

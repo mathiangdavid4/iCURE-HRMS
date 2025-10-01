@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test iCure HR</title>
+</head>
+<body>
+    <h1>Testing iCure HR System</h1>
+    <button onclick="testDB()">Test Database</button>
+    <button onclick="testFunctions()">Test Functions</button>
+    <div id="results"></div>
+
+    <script src="js/database.js"></script>
+    <script>
+        function testDB() {
+            DB.init();
+            const staff = DB.getStaff();
+            document.getElementById('results').innerHTML = `
+                <h3>Database Test Results:</h3>
+                <p>Staff count: ${staff.length}</p>
+                <p>Users count: ${DB.getUsers().length}</p>
+                <p>Settings: ${JSON.stringify(DB.getSettings())}</p>
+            `;
+        }
+
+        function testFunctions() {
+            document.getElementById('results').innerHTML += `
+                <h3>Function Test Results:</h3>
+                <p>formatCurrency: ${typeof formatCurrency}</p>
+                <p>formatDate: ${typeof formatDate}</p>
+                <p>showNotification: ${typeof showNotification}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
