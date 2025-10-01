@@ -34,10 +34,6 @@ A comprehensive, responsive Human Resource Management System designed specifical
 
 ## 🔐 Default Login
 
-**Administrator:**
-- Email: `mathiangdavid4@gmail.com`
-- Password: `Mathiangdavid@123`
-
 **Staff:**
 - Use credentials provided by administrator
 
@@ -64,5 +60,6 @@ The system uses vanilla JavaScript with localStorage for data persistence. For p
 Proprietary - Developed for iCure Medical Centre
 
 ## 🆘 Support
+
 
 For technical support, contact the system administrator.
