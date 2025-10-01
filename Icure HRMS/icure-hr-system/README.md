@@ -50,10 +50,6 @@ text
 
 ## Default Login Credentials
 
-**Owner Login:**
-- Email: mathiangdavid4@gmail.com
-- Password: Mathiangdavid@123
-
 **Staff Login:**
 - Use staff credentials created by the owner
 
@@ -104,5 +100,6 @@ The system automatically calculates NSSF contributions:
 This system is developed for iCure Medical Centre. All rights reserved.
 
 ## Support
+
 
 For technical support or questions, please contact the system administrator.
